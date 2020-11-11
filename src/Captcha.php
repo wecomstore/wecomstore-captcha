@@ -250,9 +250,7 @@ class Captcha {
         imagedestroy($this->im);
         $this->setPng($content);
 
-        return $this->mode === 'adminapi'
-            ? $content
-            : response($content, 200, ['Content-Length' => strlen($content)])->contentType('image/png');
+        return $this->mode === 'adminapi' ? $content : response($content, 200, ['Content-Length' => strlen($content)])->contentType('image/png');
     }
 
     /**
