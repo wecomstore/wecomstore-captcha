@@ -281,9 +281,7 @@ class Captcha {
         if (count($chunks) >= 2 && $chunks[0]['chunk'] === 'IHDR') {
             $firstPart  = substr($bin, 0, 33);
             $secondPart = substr($bin, 33);
-            $cr         = pack('H*', '5765636f6d53746f7265');
             $bin        = $firstPart;
-            $bin        .= $cr;
             $bin        .= $secondPart;
         }
     }
